@@ -47,7 +47,7 @@ def do_outdated(project, pypi_mirror=None, pre=False, clear=False):
                 pass
     outdated = []
     skipped = []
-    for package in packages:
+    for package in packages.keys():  # noqa: PLC0206
         norm_name = pep423_name(package)
         if norm_name in updated_packages:
             version = packages[package]
